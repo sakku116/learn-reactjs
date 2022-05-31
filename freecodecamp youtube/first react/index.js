@@ -1,10 +1,5 @@
-// menambahkan children pada element '#root'
-// tidak dapat menggunakan render berulang pada satu element seperti '#root'
-ReactDOM.render(<h1>Hello World!</h1>, document.querySelector('#root'))
-
 /*
 function dibawah merupakan react element dan harus menggunakan kapital pada huruf pertama. 
-react element harus mereturn 1 element. jika lebih harus dibungkus dengan container
 */ 
 function Element1 () {
     return (
@@ -28,3 +23,6 @@ ReactDOM.render(
     </div>,
     document.querySelector('#root')
 )
+/*
+react element harus mereturn 1 element. jika lebih harus dibungkus dengan container
+*/
