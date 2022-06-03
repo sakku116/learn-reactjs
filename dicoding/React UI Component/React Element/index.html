@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React UI Component - React Element | Dicoding</title>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- setup react easiest way using cdn -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+
+    <body>
+        <!-- root -->
+        <div id="root"></div>
+
+        <script type='text/javascript'>
+            // React.createElement(type, props, child/content)
+            const heading = React.createElement('h1', null, "react");
+
+            const strong = React.createElement('strong', null, 'best tool')
+            // nested react element
+            const paragraph = React.createElement('p', null, ['the ', strong, ' for building ui']);
+
+            const divContainer = React.createElement('div', { className: 'container' }, [heading, paragraph]);
+
+            // membuat root. atau bisa langsung dengan ReactDOM.render(element, queryselector)
+            const root = ReactDOM.createRoot(document.querySelector('#root'));
+            root.render(divContainer);
+        </script>
+    </body>
+</html>

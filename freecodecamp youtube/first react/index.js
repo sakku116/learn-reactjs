@@ -1,5 +1,7 @@
 /*
 function dibawah merupakan react element dan harus menggunakan kapital pada huruf pertama. 
+script ini harus menggunakan JSX untuk membuat element html dalam javascript.
+jika tanpa JSX, bisa menggunakan React.createElement(type, props, child) untuk membuat element.
 */ 
 function Element1 () {
     return (
