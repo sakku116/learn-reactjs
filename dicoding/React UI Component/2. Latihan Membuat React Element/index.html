@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React UI Component - Latihan Membuat React Element | Dicoding</title>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- setup react easiest way using cdn -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+
+    <body>
+        <!-- root -->
+        <div id="root"></div>
+
+        <script type='text/javascript'>
+            const root = ReactDOM.createRoot(document.querySelector('#root'));
+
+            const heading = React.createElement('h1', null, 'Biodata Perusahaan');
+
+            const list_item1 = React.createElement('li', null, 'Nama: Dicoding Indonesia');
+            const list_item2 = React.createElement('li', null, 'Bidang: Education');
+            const list_item3 = React.createElement('li', null, 'Tagline: Dicode ideas, Discover Potentioal.');
+
+            const unordered_list = React.createElement('ul', null, [list_item1, list_item2, list_item3]);
+            const container = React.createElement('div', null, heading, unordered_list);
+
+            root.render(container);
+
+        </script>
+    </body>
+</html>
