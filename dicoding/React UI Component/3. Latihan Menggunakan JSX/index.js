@@ -1,6 +1,5 @@
-import './dicoding-logo.png' as logo;
-
 const root = ReactDOM.createRoot(document.querySelector('#root'));
+const logo = 'dicoding-logo.png';
 
 const element = (
     <div>
