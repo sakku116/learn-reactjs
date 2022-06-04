@@ -1,4 +1,4 @@
-import DicodingLogo from './dicoding-logo.png';
+import './dicoding-logo.png' as logo;
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 
@@ -10,7 +10,7 @@ const element = (
             <li>Bidang: Education</li>
             <li>Tagline: Decode Ideas, Discover Potential.</li>
 
-            <img src={DicodingLogo} alt="dicoding logo"/>
+            <img src={logo} alt="dicoding logo"/>
         </ul>
     </div>
 );
