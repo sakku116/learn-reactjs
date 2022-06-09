@@ -84,15 +84,22 @@ function News () {
                 <Card title={news_datas[0].title} date={news_datas[0].date} content={news_datas[0].content}
                     content={news_datas[0].content} image={news_datas[0].image} category={news_datas[0].category}
                     link={news_datas[0].link} />
-                <Card title={news_datas[1].title} date={news_datas[1].date} content={news_datas[1].content}
-                    content={news_datas[1].content} image={news_datas[1].image} category={news_datas[1].category}
-                    link={news_datas[1].link} />
-                <Card title={news_datas[2].title} date={news_datas[2].date} content={news_datas[2].content}
-                    content={news_datas[2].content} image={news_datas[2].image} category={news_datas[2].category}
-                    link={news_datas[2].link} />
+                <Card {...news_datas[1]} />
+                <Card {...news_datas[2]} />
+
             </div>
         </div>
     )
+    // cara ringkas untuk pass props dari sebuah dictionary ...neww_datas[dict_index_of_list]
+    /*
+    atau bisa langsung merender html menggunakan react seperti dibawah untuk merender
+    semua card tanpa menulis element card satu satu
+    {someNews.map((news) => (
+                <Card {...news} />
+            )
+        )
+    }
+    */
 };
 
 // main container
