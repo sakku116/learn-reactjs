@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React UI Component - Latihan Membuat dan Komposisi React Component | Dicoding</title>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- not using this since installing dependencies locally -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+    </head>
+
+    <body>
+        <style>
+            #header {
+                text-align: center;
+            }
+            .card {
+                border: 1px solid rgba(0,0,0,.5);
+                border-radius: 5px;
+                width: 300px;
+                text-align: center;
+            }
+            .card img {
+                width: 100%;
+            }
+
+            #cardContainer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        </style>
+
+        <!-- root -->
+        <div id="root"></div>
+
+        <script type="text/babel" src="index.js"></script>
+    </body>
+</html>
