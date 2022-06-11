@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React UI Component - Latihan Membuat dan Komposisi React Component | Dicoding</title>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- not using this since installing dependencies locally -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+    </head>
+
+    <body>
+        <style>
+            body {
+                font-family: calibri, open-sans;
+            }
+            #main {
+                width: 100%;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            #contactListContainer {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .contactItem {
+                border: 1px solid black;
+                border-radius: 5px;
+                display: flex;
+                height: auto;
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+            }
+            .contactItem img {
+                box-sizing: border-box;
+                height: 100px;
+                padding: 5px;
+                border-radius: 100%;
+            }
+            .contactItemBody {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                border-left: 1px solid black;
+                padding-left: 20px;
+            }
+            .contactItemBody > * {
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
+        </style>
+
+        <!-- root -->
+        <div id="root"></div>
+
+        <script type="text/babel" src="index.js"></script>
+    </body>
+</html>
