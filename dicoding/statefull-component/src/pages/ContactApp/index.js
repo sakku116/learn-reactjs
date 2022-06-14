@@ -8,29 +8,9 @@ root di html. jadi relative-pathnya dimulai dari file index.htmlnya berada
 */
 const img = require('./profile-placeholder.png')
 
-const getData = () => {
-    return [
-        {
-            id: 1,
-            name: 'Dimas Saputra',
-            tag: 'dimasmds',
-        },
-        {
-            id: 2,
-            name: 'Arif Faizin',
-            tag: 'arifaizin',
-        },
-        {
-            id: 3,
-            name: 'Rahmat Fajri',
-            tag: 'rfajri27',
-        },
-    ]
-};
-
 function ContactItem ({id, name, tag, onDelete}) {
     return (
-        <div className="contactItem">
+        <div className="contactItem card">
             <img src={img} />
             <div className="contactItemBody">
                 <h1 className="fullName">{name}</h1>
@@ -45,10 +25,84 @@ class ContactApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            contacts: getData()
+            contacts: [
+                {
+                    id: 1,
+                    name: 'Dimas Saputra',
+                    tag: 'dimasmds',
+                },
+                {
+                    id: 2,
+                    name: 'Arif Faizin',
+                    tag: 'arifaizin',
+                },
+                {
+                    id: 3,
+                    name: 'Rahmat Fajri',
+                    tag: 'rfajri27',
+                },
+            ],
+            name: '',
+            tag: '',
         };
         
+        this.onNameChangeEvent = this.onNameChangeEvent.bind(this);
+        this.onTagChangeEvent = this.onTagChangeEvent.bind(this);
+        this.onSubmitContactEvent = this.onSubmitContactEvent.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+    }
+
+    onNameChangeEvent(event) {
+        this.setState(
+            {
+                name: event.target.value
+            }
+        )
+    }
+
+    onTagChangeEvent(event) {
+        this.setState(
+            {
+                tag: event.target.value
+            }
+        )
+    }
+
+    onSubmitContactEvent(event) {
+        event.preventDefault();
+        
+        // mendapatkan state 'name' dan 'tag'
+        var name = this.state.name;
+        var tag = this.state.tag;
+
+        if (this.state.name !== "" && this.state.tag !== '') {
+
+            // menambah value dari state 'contacts'
+            this.setState(
+                {
+                    contacts: [
+                        ...this.state.contacts,
+                        {
+                            id: +new Date(),
+                            name,
+                            tag,
+                        }
+                    ],
+                }
+            );
+            /* ...this.state.contacts merupakan semua objek dari value state 'contacts' pada awalnya. 
+            karena kita akan menambah objek lagi setelah objek objek awal, jadi objek objek awal
+            juga harus di include. jika tidak di include, maka data awal hanya akan diganti */
+
+            // mereset value input
+            this.setState(
+                {
+                    name: '',
+                    tag: '',
+                }
+            )
+            /* karena data di input form di control oleh state react. maka untuk meresetnya juga harus menggunakan state */
+        }
     }
 
     deleteItem(id) {
@@ -60,6 +114,13 @@ class ContactApp extends React.Component {
     render() {
         return (
             <div id="main">
+                <h1>Tambah Kontak</h1>
+                <form id="addContactContainer" class="card" onSubmit={this.onSubmitContactEvent}>
+                    <input type="text" placholder="Nama" value={this.state.name} onChange={this.onNameChangeEvent}/>
+                    <input type="text" placholder="Tag" value={this.state.tag} onChange={this.onTagChangeEvent}/>
+                    <button>Tambah Kontak</button>
+                </form>
+
                 <h1>Daftar Kontak</h1>
                 <div id="contactListContainer">
                 {

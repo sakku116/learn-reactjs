@@ -1,6 +1,11 @@
 body {
     font-family: calibri, open-sans;
 }
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+}
 #main {
     width: 100%;
     max-width: 600px;
@@ -10,6 +15,36 @@ body {
 h1 {
     font-size: 30px;
 }
+#addContactContainer {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+#addContactContainer input {
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+#addContactContainer button {
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(240, 87, 87);
+    border: none;
+    color: white
+}
+#addContactContainer button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 130, 130);
+}
+#addContactContainer button:active {
+    background-color: rgb(230, 255, 87);
+}
+
 #contactListContainer {
     margin-top: 20px;
     display: flex;
@@ -18,8 +53,6 @@ h1 {
     gap: 10px;
 }
 .contactItem {
-    border: 1px solid black;
-    border-radius: 5px;
     display: flex;
     height: auto;
     align-items: center;
