@@ -1,0 +1,51 @@
+body {
+    font-family: calibri, open-sans;
+}
+#main {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    font-size: 30px;
+}
+#contactListContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+.contactItem {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    height: auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+}
+.contactItem button {
+    position: absolute;
+    right: 10px;
+}
+.contactItem img {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 5px;
+    border-radius: 100%;
+}
+.contactItemBody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-left: 1px solid black;
+    padding-left: 20px;
+}
+.contactItemBody > * {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
